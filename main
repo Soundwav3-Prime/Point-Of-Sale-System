@@ -1,0 +1,304 @@
+#!/bin/bash
+
+ShirTem=2
+Lem=2
+IceCoff=2
+Frap=4
+Mshake=3
+Base=1
+Addin=1
+Boba=2 
+
+basket=$(echo "Items:")
+cart=0
+
+while true; do
+    clear
+    echo "$basket"
+    echo -e "Total: "'$'"$cart"
+    item=$(gum choose "Shirley Temple" "Lemonade" "Iced Coffee" "Frappe" "Milk Shake" "Base" "Add-In" "Boba")
+
+    case $item in
+        "Shirley Temple")
+            basket=$(echo "$basket Shirley Temple, ")
+            cart=$(($cart + 2))
+            ;;
+        "Lemonade") 
+            echo "What flavor?"
+            lemflavor=$(gum choose "Strawberry" "Blue Raspberry" "Blood Orange" "Pineapple")
+            case $lemflavor in
+                "Strawberry")
+                    # Ask the user for the size
+                    if gum confirm "What Size?" --affirmative="Large" --negative="Regular"; then
+                        # If the user selects "Large"
+                        cart=$(($cart + 1))
+                        basket=$(echo "$basket LG Strawberry Lemonade, ")
+                    else
+                        # Optional: Handle the "Regular" case if needed (not incrementing cart)
+                        echo "Regular size selected."
+                        basket=$(echo "$basket Strawberry Lemonade, ")
+                    fi
+                    ;;
+                "Blue Raspberry")
+                     # Ask the user for the size
+                    if gum confirm "What Size?" --affirmative="Large" --negative="Regular"; then
+                        # If the user selects "Large"
+                        cart=$(($cart + 1))
+                        basket=$(echo "$basket LG Blue Raspberry Lemonade, ")
+                    else
+                        # Optional: Handle the "Regular" case if needed (not incrementing cart)
+                        echo "Regular size selected."
+                        basket=$(echo "$basket Blue Raspberry Lemonade, ")
+                    fi
+                    ;;
+                "Blood Orange")
+                     # Ask the user for the size
+                    if gum confirm "What Size?" --affirmative="Large" --negative="Regular"; then
+                        # If the user selects "Large"
+                        cart=$(($cart + 1))
+                        basket=$(echo "$basket LG Blood Orange Lemonade, ")
+                    else
+                        # Optional: Handle the "Regular" case if needed (not incrementing cart)
+                        echo "Regular size selected."
+                        basket=$(echo "$basket Blood Orange Lemonade, ")
+                    fi
+                    ;;
+                "Pineapple")
+                     # Ask the user for the size
+                    if gum confirm "What Size?" --affirmative="Large" --negative="Regular"; then
+                        # If the user selects "Large"
+                        cart=$(($cart + 1))
+                        basket=$(echo "$basket LG Pineapple Lemonade, ")
+                    else
+                        # Optional: Handle the "Regular" case if needed (not incrementing cart)
+                        echo "Regular size selected."
+                        basket=$(echo "$basket Pineapple Lemonade, ")
+                    fi
+                    ;;
+            esac
+            cart=$(($cart + 2))
+            ;;
+        "Iced Coffee")
+            echo "What flavor?"
+            cofflavor=$(gum choose "Caramel" "Chocolate" "Vanilla")
+            case $cofflavor in
+                "Caramel")
+                    # Ask the user for the size
+                    if gum confirm "What Size?" --affirmative="Large" --negative="Regular"; then
+                        # If the user selects "Large"
+                        cart=$(($cart + 1))
+                        basket=$(echo "$basket LG Caramel Iced Coffee, ")
+                    else
+                        # Optional: Handle the "Regular" case if needed (not incrementing cart)
+                        echo "Regular size selected."
+                        basket=$(echo "$basket Caramel Iced Coffee, ")
+                    fi
+                    ;;
+                "Chocolate")
+                    # Ask the user for the size
+                    if gum confirm "What Size?" --affirmative="Large" --negative="Regular"; then
+                        # If the user selects "Large"
+                        cart=$(($cart + 1))
+                        basket=$(echo "$basket LG Chocolate Iced Coffee, ")
+                    else
+                        # Optional: Handle the "Regular" case if needed (not incrementing cart)
+                        echo "Regular size selected."
+                        basket=$(echo "$basket Chocolate Iced Coffee, ")
+                    fi
+                    ;;
+                "Vanilla")
+                    # Ask the user for the size
+                    if gum confirm "What Size?" --affirmative="Large" --negative="Regular"; then
+                        # If the user selects "Large"
+                        cart=$(($cart + 1))
+                        basket=$(echo "$basket LG Vanilla Iced Coffee, ")
+                    else
+                        # Optional: Handle the "Regular" case if needed (not incrementing cart)
+                        echo "Regular size selected."
+                        basket=$(echo "$basket Vanilla Iced Coffee, ")
+                    fi
+                    ;;
+            esac
+            cart=$(($cart + 2))
+            ;;
+        "Frappe")
+            echo "What flavor?"
+            frapflavor=$(gum choose "Caramel" "Chocolate" "Cookies and Cream")
+            case $frapflavor in 
+                "Caramel")
+                    # Ask the user for the size
+                    if gum confirm "What Size?" --affirmative="Large" --negative="Regular"; then
+                        # If the user selects "Large"
+                        cart=$(($cart + 1))
+                        basket=$(echo "$basket LG Caramel Frappe, ")
+                    else
+                        # Optional: Handle the "Regular" case if needed (not incrementing cart)
+                        echo "Regular size selected."
+                        basket=$(echo "$basket Caramel Frappe, ")
+                    fi
+                    ;;
+                "Chocolate")
+                     # Ask the user for the size
+                    if gum confirm "What Size?" --affirmative="Large" --negative="Regular"; then
+                        # If the user selects "Large"
+                        cart=$(($cart + 1))
+                        basket=$(echo "$basket LG Chocolate Frappe, ")
+                    else
+                        # Optional: Handle the "Regular" case if needed (not incrementing cart)
+                        echo "Regular size selected."
+                        basket=$(echo "$basket Chocolate Frappe, ")
+                    fi
+                    ;;
+                "Cookies and Cream")
+                     # Ask the user for the size
+                    if gum confirm "What Size?" --affirmative="Large" --negative="Regular"; then
+                        # If the user selects "Large"
+                        cart=$(($cart + 1))
+                        basket=$(echo "$basket LG Cookies and Cream Frappe, ")
+                    else
+                        # Optional: Handle the "Regular" case if needed (not incrementing cart)
+                        echo "Regular size selected."
+                        basket=$(echo "$basket Cookies and Cream Frappe, ")
+                    fi
+                    ;;
+            esac
+            cart=$(($cart + 4))
+            ;;
+        "Milk Shake")
+            echo "What flavor?"
+            mflavor=$(gum choose "Cookies and Cream" "Chocolate" "Vanilla")
+            case $mflavor in 
+                "Cookies and Cream")
+                     # Ask the user for the size
+                    if gum confirm "What Size?" --affirmative="Large" --negative="Regular"; then
+                        # If the user selects "Large"
+                        cart=$(($cart + 1))
+                        basket=$(echo "$basket LG Cookies and Cream Milk Shake, ")
+                    else
+                        # Optional: Handle the "Regular" case if needed (not incrementing cart)
+                        echo "Regular size selected."
+                        basket=$(echo "$basket Cookies and Cream Milk Shake, ")
+                    fi
+                    ;;
+                "Chocolate")
+                     # Ask the user for the size
+                    if gum confirm "What Size?" --affirmative="Large" --negative="Regular"; then
+                        # If the user selects "Large"
+                        cart=$(($cart + 1))
+                        basket=$(echo "$basket LG Chocolate Milk Shake, ")
+                    else
+                        # Optional: Handle the "Regular" case if needed (not incrementing cart)
+                        echo "Regular size selected."
+                        basket=$(echo "$basket Chocolate Milk Shake, ")
+                    fi
+                    ;;
+                "Vanilla")
+                     # Ask the user for the size
+                    if gum confirm "What Size?" --affirmative="Large" --negative="Regular"; then
+                        # If the user selects "Large"
+                        cart=$(($cart + 1))
+                        basket=$(echo "$basket LG Vanilla Milk Shake, ")
+                    else
+                        # Optional: Handle the "Regular" case if needed (not incrementing cart)
+                        echo "Regular size selected."
+                        basket=$(echo "$basket Vanilla Milk Shake, ")
+                    fi
+                    ;;
+            esac
+            cart=$(($cart + 3))
+            ;;
+        "Base")
+            echo "What flavor?"
+            baseflavor=$(gum choose "Water" "Sprite" "Lemonade")
+            case $baseflavor in 
+                "Water")
+                     # Ask the user for the size
+                    if gum confirm "What Size?" --affirmative="Large" --negative="Regular"; then
+                        # If the user selects "Large"
+                        cart=$(($cart + 1))
+                        basket=$(echo "$basket LG Water Base, ")
+                    else
+                        # Optional: Handle the "Regular" case if needed (not incrementing cart)
+                        echo "Regular size selected."
+                        basket=$(echo "$basket Water Base, ")
+                    fi
+                    ;;
+                "Sprite")
+                      # Ask the user for the size
+                    if gum confirm "What Size?" --affirmative="Large" --negative="Regular"; then
+                        # If the user selects "Large"
+                        cart=$(($cart + 1))
+                        basket=$(echo "$basket LG Sprite Base, ")
+                    else
+                        # Optional: Handle the "Regular" case if needed (not incrementing cart)
+                        echo "Regular size selected."
+                        basket=$(echo "$basket Sprite Base, ")
+                    fi
+                    ;;
+                "Lemonade")
+                      # Ask the user for the size
+                    if gum confirm "What Size?" --affirmative="Large" --negative="Regular"; then
+                        # If the user selects "Large"
+                        cart=$(($cart + 1))
+                        basket=$(echo "$basket LG Lemonade Base, ")
+                    else
+                        # Optional: Handle the "Regular" case if needed (not incrementing cart)
+                        echo "Regular size selected."
+                        basket=$(echo "$basket Lemonade Base, ")
+                    fi
+                    ;;
+            esac
+            cart=$(($cart + 1))
+            ;;
+        "Add-In")
+            echo "What flavor?"
+            addflavor=$(gum choose "Strawberry" "Blue Raspberry" "Blood Orange" "Pineapple")
+            case $addflavor in 
+                "Strawberry") 
+                    basket=$(echo "$basket Strawberry add-in, ")
+                    ;;
+                "Blue Raspberry")
+                    basket=$(echo "$basket Blue Raspberry add-in, ")
+                    ;;
+                "Blood Orange")
+                    basket=$(echo "$basket Blood Orange add-in, ")
+                    ;;
+                "Pineapple")
+                    basket=$(echo "$basket Pineapple add-in, ")
+                    ;;
+            esac
+            cart=$(($cart + 1))
+            ;;
+        "Boba")
+            cart=$(($cart + 2))
+            basket=$(echo "$basket Boba, ")
+            ;;
+        *) 
+            echo "Invalid, try again."
+            ;;
+    esac
+
+    # Ask the user for the size
+    #if gum confirm "What Size?" --affirmative="Large" --negative="Regular"; then
+        # If the user selects "Large"
+        #cart=$(($cart + 1))
+    #else
+        # Optional: Handle the "Regular" case if needed (not incrementing cart)
+        #echo "Regular size selected."
+    #fi
+
+
+    #echo "Will that be all?"
+# Ask the user to confirm
+    if gum confirm "Will that be all?" --affirmative="Yes" --negative="No"; then
+        # If the user says "Yes"
+        clear
+        echo "$basket"
+        echo -e "Total: "'$'"$cart"
+        exit
+    else
+        # If the user says "No"
+        echo "Okay."
+    fi
+
+done
