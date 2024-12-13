@@ -435,10 +435,13 @@ while true; do
         fi
         echo "$basket"
         echo -e "Total: "'$'"$cart.$cents"
-        exit
+        if gum choose ["okay"] --limit=1 --header="Ready for next order?"; then
+            basket=0
+            cart=0
+            cents=0
+        fi
     else
         # If the user says "No"
         echo "Okay."
     fi
-
 done
