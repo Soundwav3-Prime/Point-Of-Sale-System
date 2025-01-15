@@ -16,4 +16,18 @@ This repository contains a **Bash script** that provides an interactive terminal
 This script uses the **[gum](https://github.com/charmbracelet/gum)** utility to provide an interactive user experience. Ensure it is installed before running the script:
 
 ```bash
-brew install gum # For macOS
+# macOS or Linux
+brew install gum
+
+# Arch Linux (btw)
+pacman -S gum
+
+# Nix
+nix-env -iA nixpkgs.gum
+
+# Flox
+flox install gum
+
+# Windows (via WinGet or Scoop)
+winget install charmbracelet.gum
+scoop install charm-gum
